@@ -1,6 +1,6 @@
 # Context-Managed Objects in Python
 
-This project provides a way to manage objects in a context-aware manner in Python. It includes a class HasContextManagedFocus and a decorator make_current. These tools can be particularly useful in scenarios where you need to manage context-specific objects like user credentials or other parameters that are frequently passed around in a backend application.
+This project provides a way to manage objects in a global or thread-wise context-aware manner in Python. It includes a class HasContextManagedFocus and a decorator make_current. These tools can be particularly useful in scenarios where you need to manage context-specific objects like user credentials or other parameters that are frequently passed around in a backend application.
 
 ## Getting Started
 
@@ -46,10 +46,22 @@ In this example, User is a subclass of `HasContextManagedFocus`. The `do_somethi
 
 This class allows objects to be context-managed. It maintains a context stack where instances can be placed on top of the stack and retrieved. The as_current method is a context manager that puts the instance on top of its context stack.
 
+
 ###  make_current
 
 This function is a decorator for instance methods. It automatically puts the instance on top of its context stack during invocation and removes it after invocation is over.
 
+### Multithreading
+
+Call the `.enable_threaded_context()` or `.disable_threaded_context()` to enable or disable thread-specific context management. By default, threaded context management is disabled.
+
+```python
+from contextmanaged_objects import HasContextManagedFocus, make_current
+
+HasContextManagedFocus.enable_threaded_context()
+
+...
+```
 
 ## Contributing
 

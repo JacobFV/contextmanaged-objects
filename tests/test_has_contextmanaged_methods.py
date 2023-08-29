@@ -1,4 +1,4 @@
-from contextmanaged_objects.contextmanaged_objects import make_current
+from contextmanaged_objects import make_current
 
 
 def test_has_contextmanaged_methods():
