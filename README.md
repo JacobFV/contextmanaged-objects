@@ -65,4 +65,5 @@ Please make sure to update tests as appropriate.
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+We use the [MIT](https://choosealicense.com/licenses/mit/) license. If you make contributions to this project, you agree to license your contributions under the MIT license and you may include your name in the list of authors.
+
