@@ -1,16 +1,21 @@
-def test_has_contextmanaged_methods():
-    from contextmanaged_objects import HasContextManagedMethods
+from contextmanaged_objects.contextmanaged_objects import make_current
 
-    class Foo(HasContextManagedMethods):
+
+def test_has_contextmanaged_methods():
+    from contextmanaged_objects import HasContextManagedFocus
+
+    class Foo(HasContextManagedFocus):
         def __init__(self, x):
             self.x = x
 
+        @make_current()
         def bar(self):
             store_current_foo_x()
 
     output = []
 
     def store_current_foo_x():
+        nonlocal output
         output += [Foo.current().x]
 
     foo1 = Foo(1)

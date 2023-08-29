@@ -9,8 +9,8 @@ packages = [{ include = "contextmanaged_objects" }]
 [tool.poetry.dependencies]
 python = "^3.10"
 contextmanaged-assign = "^0.1.0"
-stringcase = "^1.2.0"
 inspect-mate-pp = "^0.0.4"
+stringcase = "^1.2.0"
 
 
 [tool.poetry.group.dev.dependencies]
